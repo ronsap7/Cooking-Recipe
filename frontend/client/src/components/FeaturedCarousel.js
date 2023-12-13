@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const FeaturedCarousel = ({ featuredRecipes }) => {
 
+
     const navigate = useNavigate();
 
     const handleCarouselClick = () => {
@@ -60,6 +61,7 @@ const FeaturedCarousel = ({ featuredRecipes }) => {
             </Slider>
         </Box>
     );
+
 
 };
 
