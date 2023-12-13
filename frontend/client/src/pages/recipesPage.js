@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Container, Grid } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
 import TempCard from '../components/TempCard';
+<<<<<<< HEAD
 import CategoryFilter from '../components/CategoryFilter';
+=======
+
+import CategoryFilter from '../components/CategoryFilter'; // Import CategoryFilter
+import { useNavigate } from 'react-router-dom';
+
+>>>>>>> 8dc884f6e5ad6701faba60bd13423dc94909498f
 
 const RecipePage = () => {
     const [recipes, setRecipes] = useState([]);
@@ -15,13 +22,47 @@ const RecipePage = () => {
             .then(response => response.json())
             .then(data => {
                 setRecipes(data);
+<<<<<<< HEAD
             })
             .catch(error => console.error('Error fetching Recipes:', error));
     }, [selectedCategory]);
 
     const handleCategoryChange = (event, newCategory) => {
         if (newCategory !== null) {
+=======
+
+            })
+            
+                console.log(data); // Assuming the response directly returns the array of recipes
+            })
+            .catch(error => console.error('Error fetching Recipes:', error));
+    }, []);
+
+    // Fetch recipes based on selected category
+    useEffect(() => {
+        const categoryQuery = selectedCategory === 'All' ? '' : `?category=${selectedCategory}`;
+        fetch(`http://localhost:5555/recipes${categoryQuery}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                setRecipes(data);
+            })
+            .catch(error => console.error('Error fetching Recipes by category:', error));
+
+    }, [selectedCategory]);
+    
+
+
+
+        if (newCategory !== null) { // Prevent deselection
+
+>>>>>>> 8dc884f6e5ad6701faba60bd13423dc94909498f
             setSelectedCategory(newCategory);
+            console.log("New category:", newCategory);
         }
     };
 

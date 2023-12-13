@@ -1,5 +1,10 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Card, CardContent, Typography, Box, CardMedia} from '@mui/material';
+=======
+
+import {  Card, CardContent, Typography, Box, CardMedia } from '@mui/material';
+>>>>>>> 8dc884f6e5ad6701faba60bd13423dc94909498f
 import { styled } from '@mui/system';
 
 // Update styling with the styled API from MUI v5
@@ -25,15 +30,36 @@ const StyledListItem = styled('li')(({ theme }) => ({
   },
 }));
 
+const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
+  height: 0,
+  paddingTop: '56.25%', // 16:9 aspect ratio
+}));
+
 function TempCard({ recipe }) {
   return (
     <StyledCard>
+<<<<<<< HEAD
+=======
+
+      {/* Image */}
+>>>>>>> 8dc884f6e5ad6701faba60bd13423dc94909498f
       <CardMedia
         component="img"
         height="140"
         image={recipe.image}
         alt={recipe.name}
       />
+<<<<<<< HEAD
+=======
+
+
+      {/* Display image */}
+      <StyledCardMedia
+        image={recipe.image}
+        title={recipe.name}
+      />
+
+>>>>>>> 8dc884f6e5ad6701faba60bd13423dc94909498f
       <CardContent>
         <StyledTypography variant="h5" gutterBottom>{recipe.name}</StyledTypography>
         
