@@ -5,8 +5,10 @@ const  { Recipe } = require('../models/recipeModels.js');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
+    const { category } = req.query;
     try {
-        const recipes = await Recipe.find();
+        const query = category && category !== 'All' ? { category } : {};
+        const recipes = await Recipe.find(query);
         res.json(recipes);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -26,16 +28,7 @@ router.get('/:id', async (req, res) => {
 });
 
 
-router.get('/', async (req, res) => {
-    const { category } = req.query;
-    try {
-      const query = category && category !== 'All' ? { category } : {};
-      const recipes = await Recipe.find(query);
-      res.json(recipes);
-    } catch (err) {
-      res.status(500).json({ message: err.message });
-    }
-  });
+
   
   
 
