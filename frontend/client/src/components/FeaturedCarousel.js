@@ -3,8 +3,10 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Paper, Typography, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedCarousel = ({ featuredRecipes }) => {
+  const navigate = useNavigate();
   const settings = {
     dots: true,
     infinite: true,
@@ -12,6 +14,9 @@ const FeaturedCarousel = ({ featuredRecipes }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true
+  };
+  const handleCarouselClick = () => {
+    navigate('/recipes');
   };
 
   return (
@@ -30,7 +35,8 @@ const FeaturedCarousel = ({ featuredRecipes }) => {
     }}>
       <Slider {...settings}>
         {featuredRecipes.map((recipe, index) => (
-          <Paper key={index} elevation={3} sx={{ p: 2, maxWidth: 600, margin: 'auto' }}>
+          
+          <Paper key={index} onClick={handleCarouselClick} elevation={3} sx={{ p: 2, maxWidth: 600, margin: 'auto' }}>
             <img 
               src={recipe.image} 
               alt={recipe.name} 
