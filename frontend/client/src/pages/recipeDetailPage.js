@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { Container, Typography, Card, CardContent, CardMedia } from '@mui/material';
 
 import axios from 'axios';
@@ -30,8 +31,12 @@ function RecipeDetailPage() {
         <Container>
             <Card>
 
+       <CardMedia
+
+
 
                 <CardMedia
+
                     component="img"
                     height="300"
                     image={recipe.image}
