@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, Typography, Box } from '@mui/material';
+import { Card, CardContent, Typography, Box, CardMedia } from '@mui/material';
 import { styled } from '@mui/system';
 
 // Update styling with the styled API from MUI v5
@@ -28,6 +28,14 @@ const StyledListItem = styled('li')(({ theme }) => ({
 function TempCard({ recipe }) {
   return (
     <StyledCard>
+      {/* Image */}
+      <CardMedia
+        component="img"
+        height="140"
+        image={recipe.image}
+        alt={recipe.name}
+      />
+
       <CardContent>
         <StyledTypography variant="h5" gutterBottom>{recipe.name}</StyledTypography>
         
