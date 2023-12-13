@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Typography, Card, CardContent, CardMedia } from '@mui/material';
+
 import axios from 'axios';
 
 function RecipeDetailPage() {
@@ -28,13 +29,17 @@ function RecipeDetailPage() {
     return (
         <Container>
             <Card>
+
+
                 <CardMedia
                     component="img"
                     height="300"
                     image={recipe.image}
                     alt={recipe.name}
                 />
+
                 <CardContent>
+                    
                     <Typography variant="h4" gutterBottom>{recipe.name}</Typography>
                     <Typography variant="subtitle1" gutterBottom>Servings: {recipe.servings}</Typography>
                     <Typography variant="h6" gutterBottom>Ingredients</Typography>
