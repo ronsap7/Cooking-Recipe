@@ -9,21 +9,14 @@ const FeaturedCarousel = ({ featuredRecipes }) => {
 
 
 
+
     const navigate = useNavigate();
 
     const handleCarouselClick = () => {
         navigate('/recipes');
     };
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true
-    };
-
+}
     return (
         <Box sx={{ 
             width: '100%', 
@@ -62,6 +55,7 @@ const FeaturedCarousel = ({ featuredRecipes }) => {
             </Slider>
         </Box>
     );
+
 
 };
 

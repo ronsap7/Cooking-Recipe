@@ -1,6 +1,8 @@
 import React from 'react';
 
+
 import {  Card, CardContent, Typography, Box, CardMedia } from '@mui/material';
+
 
 import { styled } from '@mui/system';
 
@@ -41,7 +43,19 @@ function TempCard({ recipe }) {
         height="140"
         image={recipe.image}
         alt={recipe.name}
+
+      /> */}
+
+
+      {/* Display image */}
+      <StyledCardMedia
+        image={recipe.image}
+        title={recipe.name}
       />
+
+
+      />
+
       <CardContent>
         <StyledTypography variant="h5" gutterBottom>{recipe.name}</StyledTypography>
         

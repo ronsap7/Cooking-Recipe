@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Container, Grid } from '@material-ui/core';
 import TempCard from '../components/TempCard';
 import CategoryFilter from '../components/CategoryFilter';
+
 import { useNavigate } from 'react-router-dom';
+
 
 const RecipePage = () => {
     const [recipes, setRecipes] = useState([]);
@@ -20,9 +22,10 @@ const RecipePage = () => {
     }, [selectedCategory]);
 
     const handleCategoryChange = (event, newCategory) => {
+
         if(newCategory !== null) {
+
             setSelectedCategory(newCategory);
-            console.log("New category:", newCategory);
         }
     };
 
