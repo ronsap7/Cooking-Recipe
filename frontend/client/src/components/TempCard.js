@@ -38,23 +38,23 @@ function TempCard({ recipe }) {
   return (
     <StyledCard>
 
+
+      {/* Image */}
+
       <CardMedia
         component="img"
         height="140"
         image={recipe.image}
         alt={recipe.name}
 
-      /> */}
+      /> 
 
 
       {/* Display image */}
-      <StyledCardMedia
-        image={recipe.image}
-        title={recipe.name}
-      />
+      
 
 
-      />
+      
 
       <CardContent>
         <StyledTypography variant="h5" gutterBottom>{recipe.name}</StyledTypography>
